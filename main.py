@@ -9,19 +9,19 @@ def main():
     # print(newBlock)
 
 
-    bankBalances = Blockchain()
-    bankBalances.addNewBlock(Block(1, {"name":"Sivaram", "Balance":"10000000"}))
-    bankBalances.addNewBlock(Block(2, {"name":"randomDude1", "Balance":"10000"}))
-    bankBalances.addNewBlock(Block(3, {"name":"randomDude2", "Balance":"100000"}))
+    accBalances = Blockchain()
+    accBalances.addNewBlock(Block(1, {"name":"Sivaram", "Balance":"10000000"}))
+    accBalances.addNewBlock(Block(2, {"name":"randomDude1", "Balance":"10000"}))
+    accBalances.addNewBlock(Block(3, {"name":"randomDude2", "Balance":"100000"}))
 
-    print("Is the chain valid? {}".format(bankBalances.isValidChain()))
+    print("Is the chain valid? {}".format(accBalances.isValidChain()))
 
-    #randomDude1 is trying to manipulate his bank balance
-    bankBalances.chain[1].data = {"name":"randomDude1", "Balance":"10000"}
-    bankBalances.chain[1].hash = bankBalances.chain[1].calcHash
+    #randomDude1 is trying to manipulate his acc balance
+    accBalances.chain[1].data = {"name":"randomDude1", "Balance":"10000"}
+    accBalances.chain[1].hash = accBalances.chain[1].calcHash
 
     #check if the chain is valid
-    print("Is the chain valid? {}".format(bankBalances.isValidChain()))
+    print("Is the chain valid? {}".format(accBalances.isValidChain()))
 
   
 # Using the special variable  
