@@ -1,5 +1,5 @@
-from customClass.blockchain import Block
-from customClass.blockchain import Blockchain
+from classes.blockchain import Block
+from classes.blockchain import Blockchain
 
 # Defining main function 
 def main(): 
