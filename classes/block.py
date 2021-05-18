@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class Block:
-    def __init__(self, index, data, prevHash=""):
+    def __init__(self, transactions, prevHash=""):
         """Constructor for the Block class
 
         Args:
@@ -12,9 +12,8 @@ class Block:
                 data (dict): Data that each block stores (here, bank acc details)
                 prevHash (string): Hash of the prev block. 0000 for Genisis block
         """
-        self.index = index
+        self.transactions = transactions
         self.timestamp = datetime.now().timestamp()
-        self.data = data.copy()
         self.prevHash = prevHash
         self.hash = ""
         self.nonce = 0
@@ -27,8 +26,7 @@ class Block:
         """
         toBeHashed = "".join(
             [
-                str(self.index),
-                str(json.dumps(self.data)),
+                str(self.transactions),
                 str(self.prevHash),
                 str(self.nonce),
                 str(self.timestamp),
@@ -41,5 +39,3 @@ class Block:
         while self.hash[0:difficulty] != "".join(["0"] * difficulty):
             self.nonce += 1
             self.hash = self.calcHash()
-
-        print("New block added: {}".format(self.hash))
