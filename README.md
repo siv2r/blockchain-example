@@ -1,2 +1,2 @@
 # blockchain-example
-An example to demonstrate the application of blockchain concept in storing account balances of users.
+An example to demonstrate the application of blockchain to transfer assests between differnt members
